@@ -46,6 +46,6 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         artifacts: "tools/*.tar.xz"
-        tag: gcc
+        tag: Linaro gcc for aarch64/arm
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
