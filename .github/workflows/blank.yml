@@ -32,8 +32,16 @@ jobs:
       run: |
         mkdir tools
         cd tools
+        wget https://snapshots.linaro.org/gnu-toolchain/11.3-2022.06-1/aarch64-linux-gnu/gcc-linaro-11.3.1-2022.06-x86_64_aarch64-linux-gnu.tar.xz
+        wget https://snapshots.linaro.org/gnu-toolchain/11.3-2022.06-1/arm-linux-gnueabihf/gcc-linaro-11.3.1-2022.06-x86_64_arm-linux-gnueabihf.tar.xz
+        wget https://snapshots.linaro.org/gnu-toolchain/12.2-2022.11-1/aarch64-linux-gnu/gcc-linaro-12.2.1-2022.11-x86_64_aarch64-linux-gnu.tar.xz
+        wget https://snapshots.linaro.org/gnu-toolchain/12.2-2022.11-1/arm-linux-gnueabihf/gcc-linaro-12.2.1-2022.11-x86_64_arm-linux-gnueabihf.tar.xz
         wget https://snapshots.linaro.org/gnu-toolchain/12.2-2023.04-1/aarch64-linux-gnu/gcc-linaro-12.2.1-2023.04-x86_64_aarch64-linux-gnu.tar.xz
         wget https://snapshots.linaro.org/gnu-toolchain/12.2-2023.04-1/arm-linux-gnueabihf/gcc-linaro-12.2.1-2023.04-x86_64_arm-linux-gnueabihf.tar.xz
+        wget https://snapshots.linaro.org/gnu-toolchain/13.0-2022.11-1/aarch64-linux-gnu/gcc-linaro-13.0.0-2022.11-x86_64_aarch64-linux-gnu.tar.xz
+        wget https://snapshots.linaro.org/gnu-toolchain/13.0-2022.11-1/arm-linux-gnueabihf/gcc-linaro-13.0.0-2022.11-x86_64_arm-linux-gnueabihf.tar.xz
+       
+        
     - name: Release 
       uses: ncipollo/release-action@v1
       with:
