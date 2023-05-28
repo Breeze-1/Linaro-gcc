@@ -1,0 +1,42 @@
+name: Main
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: 00 16 * * *
+  watch:
+    types: [started]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build-flutter-engine:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Echo Free space
+      run: |
+          echo "Free space:"
+          df -h
+    - name: Prepare Env
+      run: |
+        sudo apt-get update
+        sudo apt-get install wget
+    - name: Get 
+      run: |
+        mkdir tools
+        cd tools
+        wget https://snapshots.linaro.org/gnu-toolchain/12.2-2023.04-1/aarch64-linux-gnu/gcc-linaro-12.2.1-2023.04-x86_64_aarch64-linux-gnu.tar.xz
+        wget https://snapshots.linaro.org/gnu-toolchain/12.2-2023.04-1/arm-linux-gnueabihf/gcc-linaro-12.2.1-2023.04-x86_64_arm-linux-gnueabihf.tar.xz
+    - name: Release 
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "tools/*.tar.xz"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        allowUpdates: true
