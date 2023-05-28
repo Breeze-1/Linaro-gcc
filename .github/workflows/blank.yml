@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-flutter-engine:
+  get:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
@@ -38,5 +38,6 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         artifacts: "tools/*.tar.xz"
+        tag: gcc
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
