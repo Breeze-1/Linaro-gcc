@@ -40,6 +40,8 @@ jobs:
         wget https://snapshots.linaro.org/gnu-toolchain/12.2-2023.04-1/arm-linux-gnueabihf/gcc-linaro-12.2.1-2023.04-x86_64_arm-linux-gnueabihf.tar.xz
         wget https://snapshots.linaro.org/gnu-toolchain/13.0-2022.11-1/aarch64-linux-gnu/gcc-linaro-13.0.0-2022.11-x86_64_aarch64-linux-gnu.tar.xz
         wget https://snapshots.linaro.org/gnu-toolchain/13.0-2022.11-1/arm-linux-gnueabihf/gcc-linaro-13.0.0-2022.11-x86_64_arm-linux-gnueabihf.tar.xz
+        wget https://snapshots.linaro.org/gnu-toolchain/14.0-2023.06-1/aarch64-linux-gnu/gcc-linaro-14.0.0-2023.06-x86_64_aarch64-linux-gnu.tar.xz
+        wget https://snapshots.linaro.org/gnu-toolchain/14.0-2023.06-1/arm-linux-gnueabihf/gcc-linaro-14.0.0-2023.06-aarch64_arm-linux-gnueabihf.tar.xz
     - name: Get current date
       id: date
       run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
