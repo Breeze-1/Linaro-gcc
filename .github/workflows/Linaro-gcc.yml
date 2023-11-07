@@ -54,7 +54,7 @@ jobs:
     - name: Release 
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "tools/*.tar.xz"
+        artifacts: "tools/*.tar.xz,tools/*.tar.bz2"
         tag: Linaro-gcc-toolchain-${{ steps.date.outputs.date }}
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
